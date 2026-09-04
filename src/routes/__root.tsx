@@ -12,7 +12,7 @@ import { type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { ThemeProvider, THEME_INIT_SCRIPT } from "../components/theme";
 import { JsonLd } from "../components/JsonLd";
-import { SITE } from "../lib/site";
+import { BASE_URL, SITE } from "../lib/site";
 import { localBusinessLd, OG_IMAGE, websiteLd } from "../lib/seo";
 
 const SITE_NAME = "JCM Eletrônica";
@@ -122,10 +122,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
       },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: "/favicon.svg" },
-      { rel: "manifest", href: "/site.webmanifest" },
-      { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
+      { rel: "icon", href: `${BASE_URL}favicon.svg`, type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: `${BASE_URL}favicon.svg` },
+      { rel: "manifest", href: `${BASE_URL}site.webmanifest` },
+      { rel: "sitemap", type: "application/xml", href: `${BASE_URL}sitemap.xml` },
     ],
   }),
   shellComponent: RootShell,

@@ -7,6 +7,9 @@ export const getRouter = () => {
 
   const router = createRouter({
     routeTree,
+    // Derivado do `base` do Vite — "/" no domínio próprio, "/jcm-eletronica/"
+    // quando publicado numa subpasta (GitHub Pages sem domínio).
+    basepath: import.meta.env.BASE_URL,
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,

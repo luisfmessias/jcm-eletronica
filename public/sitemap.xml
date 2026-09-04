@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap padrão (domínio final). No deploy do GitHub Pages este arquivo é
+  regerado automaticamente por scripts/postbuild.mjs com a URL correta.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jcmeletronica.com.br/</loc>

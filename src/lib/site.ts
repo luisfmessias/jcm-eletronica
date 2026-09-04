@@ -1,8 +1,18 @@
 // Dados do negócio — ponto único de verdade para contato, endereço e horários.
 
-// ⚠️ TROCAR pelo domínio real assim que o site estiver no ar (sem barra no fim).
-// É usado nas URLs canônicas, no sitemap.xml e nos dados estruturados do Google.
-export const SITE_URL = "https://www.jcmeletronica.com.br";
+// Caminho base (Vite): "/" no domínio próprio, "/jcm-eletronica/" numa subpasta.
+export const BASE_URL = import.meta.env.BASE_URL || "/";
+
+// Origem do site. Vem de VITE_SITE_URL no build; o padrão é o domínio final.
+// ⚠️ Ao publicar num domínio próprio, defina VITE_SITE_URL (ou troque o padrão)
+// e atualize public/sitemap.xml e public/robots.txt.
+export const SITE_ORIGIN = (
+  import.meta.env["VITE_SITE_URL"] || "https://www.jcmeletronica.com.br"
+).replace(/\/+$/, "");
+
+// URL base completa do site = origem + caminho base, sem barra no fim.
+// Usada nas canônicas, Open Graph, sitemap e dados estruturados.
+export const SITE_URL = `${SITE_ORIGIN}${BASE_URL}`.replace(/\/+$/, "");
 
 export const SITE = {
   name: "JCM Eletrônica",
